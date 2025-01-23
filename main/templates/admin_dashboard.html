@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome to the Admin Dashboard! Here you can manage articles, users, and events.</p>
+
+    <!-- Manage Articles Section -->
+    <h2>Manage Articles</h2>
+    <a href="{% url 'add_article' %}" class="btn btn-primary">Add New Article</a>
+    <a href="{% url 'articles' %}" class="btn btn-secondary">View All Articles</a>
+
+    <!-- Manage Users Section -->
+    <h2>Manage Users</h2>
+    <a href="{% url 'manage_users' %}" class="btn btn-secondary">View All Users</a>
+
+    <!-- Manage Events Section -->
+    <!-- <h2>Manage Events</h2>
+    <a href="{% url 'manage_events' %}" class="btn btn-secondary">View All Events</a>
+    <a href="{% url 'add_event' %}" class="btn btn-success">Add New Event</a> -->
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!-- waterways/main/templates/confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Confirm Deletion - Water-way's</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Deletion</h1>
+        <p>Are you sure you want to delete the article: <strong>{{ article.title }}</strong>?</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" style="background-color: red; color: white;">Delete</button>
+            <a href="{% url 'articles' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

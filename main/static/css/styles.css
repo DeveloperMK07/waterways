@@ -1,0 +1,397 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #007bff; /* Blue background */
+    padding: 10px; /* Added padding for better appearance */
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar .navbar-brand {
+    color: white; /* White text for brand */
+    font-size: 1.8rem; /* Increased font size for brand */
+    margin-right: auto; /* Pushes brand to the left */
+}
+
+.navbar .nav-link {
+    color: white; /* White text for navbar links */
+    font-size: 1.2rem; /* Increased text size for navbar links */
+    padding: 10px 15px; /* Adjust padding for better spacing */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and size transition */
+    margin: 0 10px; /* Add space around navbar links */
+}
+
+.navbar .nav-link:hover {
+    color: #e0e0e0; /* Lighten text color on hover */
+    transform: scale(1.1); /* Increase size on hover */
+}
+
+/* Ensure the active link has no color changes */
+.navbar .nav-item.active .nav-link {
+    color: white; /* Keep text color white for active link */
+}
+
+.navbar .btn {
+    font-size: 1.2rem; /* Increased text size for login button */
+    color: #8B0000; /* Set text color for login button to blood color */
+}
+
+/* Style for the login button to keep it outlined */
+.btn-outline-primary {
+    color: #007bff; /* Text color for the login button */
+    border-color: #007bff; /* Border color for the login button */
+}
+
+.btn-outline-primary:hover {
+    background-color: white; /* Change background on hover */
+    color: #007bff; /* Keep the text color */
+}
+
+.content {
+    padding: 20px; /* Maintain content padding */
+    padding-left: 20px; /* Add padding from left */
+    padding-right: 20px; /* Add padding from right */
+}
+
+/* Responsive adjustments for the navbar */
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 0.9rem; /* Decrease font size on smaller screens */
+    }
+
+    .navbar .navbar-brand,
+    .navbar .btn {
+        font-size: 1rem; /* Decrease button size on smaller screens */
+    }
+}
+
+/* Login page specific styles */
+body.login-page {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-page main {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-page h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+.login-page label {
+    font-weight: bold;
+    color: #555;
+}
+
+.login-page input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-page button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-page button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.login-page p {
+    margin-top: 1em;
+    color: #555;
+}
+
+.login-page a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-page a:hover {
+    text-decoration: underline;
+    color: yellow; /* Change link color to white on hover */
+}
+
+/* Other pages */
+.container {
+    margin-top: 20px; /* Add margin top for the main container */
+}
+.back-to-home {
+    margin-top: 1em; /* Space above the button */
+}
+
+.back-to-home a {
+    display: inline-block; /* Make the link behave like a button */
+    padding: 10px 15px; /* Button padding */
+    font-size: 1em; /* Font size */
+    color: white; /* Text color */
+    background-color: #007bff; /* Primary color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.back-to-home a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+
+/* Adjustments for join page */
+.join-page main {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto; /* Center align */
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .register-page main,
+    .join-page main {
+        width: 90%; /* Responsive width for smaller screens */
+    }
+}
+
+/* regter.html styling
+body.register-page {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-page main {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.register-page h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+.register-page label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-page input,
+.register-page select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.register-page button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.register-page button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.register-page p {
+    margin-top: 1em;
+    color: #555;
+}
+
+.register-page a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-page a:hover {
+    text-decoration: underline;
+}
+
+/* Back button */
+/* .back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: bold;
+} */
+/* 
+.back-link:hover {
+    color: #0056b3;
+} */
+
+/* Additional styles for responsiveness */
+/* @media (max-width: 768px) {
+    .register-page main {
+        width: 90%;
+    }
+} */ */
+
+.agriculture-page .container {
+    max-width: 800px; /* Maximum width for the container */
+    margin: 20px auto; /* Centering the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background for the content area */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading styles for agriculture page */
+.agriculture-page h1 {
+    color: #4CAF50; /* Green color for the main heading */
+    text-align: center; /* Center alignment */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.agriculture-page h2 {
+    color: #333; /* Dark gray for subheadings */
+    margin-top: 20px; /* Space above subheadings */
+}
+
+/* Form styles for the input elements */
+.agriculture-page label {
+    display: block; /* Labels should be block elements */
+    font-weight: bold; /* Bold labels for emphasis */
+    margin: 10px 0 5px; /* Margin above and below labels */
+}
+
+.agriculture-page input[type="text"],
+.agriculture-page select {
+    width: 100%; /* Full width for inputs and selects */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 20px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for inputs */
+}
+
+/* Styles for the recommendation button */
+.agriculture-page button {
+    background-color: #28a745; /* Green button color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+    width: 100%; /* Full width for the button */
+}
+
+.agriculture-page button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Styles for error messages */
+.agriculture-page .error-message {
+    color: red; /* Red color for error messages */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-top: 10px; /* Margin above error messages */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .agriculture-page .container {
+        padding: 15px; /* Less padding on smaller screens */
+    }
+
+    .agriculture-page h1 {
+        font-size: 1.5em; /* Smaller font size for the heading */
+    }
+
+    .agriculture-page h2 {
+        font-size: 1.2em; /* Smaller font size for subheadings */
+    }
+}
+
+
+
+
+
+/*new*/
+
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between input and button */
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;  /* Ensure input takes available space */
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

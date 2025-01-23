@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Add a New Article</h1>
+    
+    <!-- Display success or error messages -->
+    {% if messages %}
+        <div class="alert alert-info">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Article submission form -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="title">Article Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="content">Article Content:</label>
+            <textarea class="form-control" id="content" name="content" rows="8" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Select Category:</label>
+            <select class="form-control" id="category" name="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Water Conservation Methods">Water Conservation Methods</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Technology">Technology</option>
+                <option value="Environmental Policy">Environmental Policy</option>
+                <option value="Community Actions">Community Actions</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Upload an Image (optional):</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Article</button>
+    </form>
+</div>
+{% endblock %}

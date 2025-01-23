@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}  <!-- Add this line to load static files -->
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to Water-way's</h1>
+        <p class="text-center">Your platform for sharing water-efficient techniques and methods to minimize water scarcity.</p>
+
+        <!-- Banner Section -->
+        <div class="banner mt-5 p-4 text-white text-center" style="background-color: #4CAF50; border-radius: 10px;">
+            <h2>Join Our Community</h2>
+            <p>Be part of our movement to share and learn innovative water-saving techniques.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0EtZy2ceFGYrfuwf-S4zWW4mKFKTSov9giKQGp0sFigmHFQ/viewform?usp=dialog" class="btn btn-light btn-lg mt-3" target="_blank">Join Now</a>
+        </div>
+
+        <!-- Motive Section -->
+        <div class="mt-5">
+            <h3 class="text-center">Our Motive</h3>
+            <ul class="mt-3" style="list-style-type: disc; padding-left: 20px;">
+                <li>To create a centralized platform that provides accessible, peer-reviewed information on water conservation techniques.</li>
+                <li>To promote the sharing of knowledge and innovative practices to help combat water scarcity.</li>
+                <li>To foster a community-driven approach to addressing environmental challenges related to water resources.</li>
+                <li>To encourage sustainable agricultural practices and empower farmers with tools and resources to optimize water usage.</li>
+                <li>To develop a space where users can contribute articles, videos, and participate in discussions around water efficiency.</li>
+                <li>To integrate social media features for wider outreach and mobile accessibility for easy, on-the-go information access.</li>
+            </ul>
+        </div>
+
+        <!-- Featured Articles Section -->
+        <div class="mt-5">
+            <h3 class="text-center">Featured Articles</h3>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static '1.webp' %}" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Innovative Irrigation Techniques</h5>
+                            <p class="card-text">Learn about new methods in irrigation that can help conserve water and increase crop yield.</p>
+                            <a href="{% url 'articles' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static '2.webp' %}" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Rainwater Harvesting Best Practices</h5>
+                            <p class="card-text">Explore efficient rainwater harvesting techniques to provide sustainable water sources.</p>
+                            <a href="{% url 'articles' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static '3.webp' %}" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Water-Efficient Crop Management</h5>
+                            <p class="card-text">Discover how to choose and manage crops that require less water and thrive in drought conditions.</p>
+                            <a href="{% url 'articles' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter-section mt-5 p-4 text-white text-center" style="background-color: #007BFF; border-radius: 10px;">
+            <h2>Join Our Newsletter</h2>
+            <p>Stay updated with the latest articles and techniques on water conservation. Enter your email to subscribe.</p>
+            <form method="POST" action="{% url 'subscribe_newsletter' %}">
+                {% csrf_token %}
+                <div class="subscribe-form">
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-light btn-lg">Subscribe</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="mt-5 p-4 text-center text-white" style="background-color: #333;">
+            <p>&copy; 2024 Water-way's. All Rights Reserved.</p>
+            <p>
+                <a href="/privacy-policy" style="color: #4CAF50; text-decoration: none;">Privacy Policy</a> |
+                <a href="/terms" style="color: #4CAF50; text-decoration: none;">Terms of Service</a> |
+                <a href="/contact" style="color: #4CAF50; text-decoration: none;">Contact Us</a>
+            </p>
+            <p>Follow us on 
+                <a href="https://twitter.com" target="_blank" style="color: #4CAF50; text-decoration: none;">Twitter</a>,
+                <a href="https://facebook.com" target="_blank" style="color: #4CAF50; text-decoration: none;">Facebook</a>, and
+                <a href="https://instagram.com" target="_blank" style="color: #4CAF50; text-decoration: none;">Instagram</a>.
+            </p>
+        </footer>
+    </div>
+{% endblock %}

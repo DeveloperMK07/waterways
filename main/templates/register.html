@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Water-way's</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body class="register-page">
+    <a href="javascript:history.back()" class="back-link">&larr; Back</a>
+    <main class="register-container">
+        <h1>Register</h1>
+        
+        <!-- Display error messages if registration fails -->
+        {% if form.errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+        <!-- Registration form -->
+        <form method="post" class="register-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" value="{{ form.first_name.value }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="{{ form.username.value }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label>
+                    <input type="checkbox" id="show_password" onclick="togglePasswordVisibility()"> Show Password
+                </label>
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="{{ form.email.value }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male" {% if form.gender.value == 'male' %}selected{% endif %}>Male</option>
+                    <option value="female" {% if form.gender.value == 'female' %}selected{% endif %}>Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="teacher" {% if form.occupation.value == 'teacher' %}selected{% endif %}>Teacher</option>
+                    <option value="farmer" {% if form.occupation.value == 'farmer' %}selected{% endif %}>Farmer</option>
+                    <option value="student" {% if form.occupation.value == 'student' %}selected{% endif %}>Student</option>
+                    <option value="other" {% if form.occupation.value == 'other' %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" value="{{ form.city.value }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" value="{{ form.pincode.value }}" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </main>
+
+    <script>
+        // Toggle password visibility
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

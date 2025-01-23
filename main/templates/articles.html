@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center">Articles</h1>
+
+        <!-- Add Article Button -->
+        <div class="text-right mb-3">
+            <a class="btn btn-primary" href="/add-article/">Add Article</a>
+        </div>
+
+        <!-- Article List -->
+        <div class="list-group">
+            {% for article in articles %}
+                <div class="list-group-item">
+                    <h5 class="mb-1">
+                        <a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>
+                    </h5>
+                    <p class="mb-1">{{ article.content|truncatewords:30|safe }}</p>
+                    <small class="text-muted">By {{ article.author }} | {{ article.created_at }}</small>
+                    <div class="mt-2">
+                        <form method="post" action="{% url 'upvote_article' article.id %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success btn-sm" aria-label="Upvote article {{ article.title }}">Upvote</button>
+                        </form>
+                        <span class="ml-2">Upvotes: {{ article.upvotes }}</span>
+
+                        <!-- Delete Article Button (Visible only to admins) -->
+                        {% if user.is_superuser %}
+                            <form method="post" action="{% url 'delete_article' article.id %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this article?');">Delete</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <div class="list-group-item text-center">No articles available. Please add one.</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
