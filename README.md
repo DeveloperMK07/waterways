@@ -16,7 +16,7 @@ Waterways is an innovative system designed to assist farmers by collecting artic
 - **Backend**: Django  
 - **Frontend**: HTML, CSS, JavaScript  
 - **Database**: SQLite (or any database you used)  
-- **APIs**: (If applicable, mention any APIs used for gathering articles or data.)  
+ 
 
 ## 🛠️ Installation and Setup  
 Follow these steps to set up the project locally:  
