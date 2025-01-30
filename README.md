@@ -3,7 +3,7 @@
 <!--![Waterways Banner](https://your-image-link-here) <!-- Optional: Add a relevant banner image or delete this line -->
 
 ## 🌊 About the Project  
-Waterways is an innovative system designed to assist farmers by collecting articles and recommending suitable techniques for agriculture purposes. This project leverages the power of **Django** to create a user-friendly platform for enhancing agricultural productivity.  
+Waterways is an innovative system designed to assist farmers by collecting articles and recommending suitable techniques for agriculture purposes. This project leverages the power of **Django** to create a user-friendly platform for enhancing agricultural productivity.This platfrom can help many framers who don't know there suitable way to conserve water.
 
 ## 🚀 Features  
 - 📰 **Article Collection**: Gathers the latest articles related to agriculture and water management.  
